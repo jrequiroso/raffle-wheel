@@ -148,7 +148,7 @@ button {
 .page-control:first-child {
     border-bottom-right-radius: 24px;
 }
-.page-control:last-child {
+.page-control:nth-child(2) {
     border-bottom-left-radius: 24px;
 }
 

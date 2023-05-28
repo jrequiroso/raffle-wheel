@@ -161,6 +161,14 @@ createApp({
             this.edit_person_index = null;
         },
 
+        resetAll() {
+            if (confirm("Are you sure you want to reset everything>")) {
+                this.entries = [];
+                this.prizes = [];
+                this.winners = [];
+            }
+        },
+
         deletePerson(index) {
             this.savePrize();
             this.savePerson();
