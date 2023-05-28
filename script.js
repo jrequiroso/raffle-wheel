@@ -30,12 +30,9 @@ createApp({
             spinning_prize_interval: null,
 
             sample_entries: "John Doe\nJane Doe\nJohn Smith\nJane Smith\nJohn Wayne\nJane Wayne\nJohn Galt\nJane Galt\nJohn Lennon\nJane Lennon\nJohn Wick\nJane Wick",
-            
+            sample_prizes: "Sponsor 1|Prize 1\nSponsor 2|Prize 2\nSponsor 3|Prize 3\nSponsor 4|Prize 4\nSponsor 5|Prize 5\nSponsor 6|Prize 6",
+
             entries: [],
-
-            sample_prizes:
-                "Sponsor 1|Prize 1\nSponsor 2|Prize 2\nSponsor 3|Prize 3\nSponsor 4|Prize 4\nSponsor 5|Prize 5\nSponsor 6|Prize 6",
-
             prizes: [],
             winners: [],
         }
@@ -45,11 +42,27 @@ createApp({
         // any change to entries, prizes, winners, etc. will be saved to local storage
         entries: {
             handler() {
-                // localStorage.entries = JSON.stringify(this.entries);
+                localStorage.entries = JSON.stringify(this.entries);
                 console.log("saving entries..")
             },
             deep: true,
-        }
+        },
+
+        prizes: {
+            handler() {
+                localStorage.prizes = JSON.stringify(this.prizes);
+                console.log("saving prizes..")
+            },
+            deep: true,
+        },
+
+        winners: {
+            handler() {
+                localStorage.winners = JSON.stringify(this.winners);
+                console.log("saving winners..")
+            },
+            deep: true,
+        },
 
     },
 
@@ -318,5 +331,18 @@ createApp({
         window.onbeforeunload = function() {
             return "Data will be lost if you leave the page, are you sure?";
         };
+
+        // check for localstorage
+        if (localStorage.entries) {
+            this.entries = JSON.parse(localStorage.entries);
+        }
+
+        if (localStorage.prizes) {
+            this.prizes = JSON.parse(localStorage.prizes);
+        }
+
+        if (localStorage.winners) {
+            this.winners = JSON.parse(localStorage.winners);
+        }
     },
 }).mount('#app')
