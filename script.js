@@ -3,6 +3,7 @@ import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js'
 createApp({
     data() {
         return {
+            top_minimized: false,
             page: 'setup',
             
             new_name: '',

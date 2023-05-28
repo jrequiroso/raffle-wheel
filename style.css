@@ -69,6 +69,13 @@ button {
     position: relative;
 }
 
+.bottom-half {
+    height: calc(100vh - 450px);
+    overflow-y: auto; 
+    position: relative;
+    border-top: 20px solid #fdbd00;
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -273,6 +280,16 @@ button {
     display: flex;
     flex-direction: row;
     gap: 8px;
+}
+
+.button-min-max {
+    background: #fdbd00;
+    position: absolute; 
+    right: 9px; 
+    border-bottom-left-radius: 8px; 
+    border-bottom-right-radius: 8px; 
+    z-index: 1;
+    width: 100px;
 }
 
 .button-icon {
