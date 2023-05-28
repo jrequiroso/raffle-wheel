@@ -228,6 +228,7 @@ button {
 }
 
 .top-content {
+    position: relative;
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
@@ -316,4 +317,44 @@ button {
 
 #winners-list.hidden {
     opacity: 0%;
+}
+
+/* if width of screen is less than 900px, hide .logo-container */
+@media (max-width: 900px) {
+    .logo-container {
+        display: none;
+    }
+
+    .top-content::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        filter: grayscale(100%);
+        background-image: url('images/logo.png');
+        background-size: 40%;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: opacity(70%);
+    }
+
+    .roller {
+        min-width: auto;
+    }
+
+    .roller-controls {
+        padding-left: unset;
+    }
+
+    .section-name {
+        font-size: 24px;
+    }
+
+    .button {
+        font-size: 14px;
+    }
+
+    .raffle-information {
+        padding-top: 32px;
+    }
 }

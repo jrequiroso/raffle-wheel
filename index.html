@@ -21,11 +21,7 @@
     </style>
 </head>
 <body>
-    <!-- check sample here: https://github.com/mcoredev/vue-winner-picker/blob/master/src/components/WinnerPicker.vue -->
-    <!-- http://vue.mcore.sk/ -->
-    <!-- https://codepen.io/toschivictor/pen/JjNZjEj -->
-
-    <div id="app">
+    <div id="app" v-cloak>
 
         <div class="top-half">
 
@@ -40,10 +36,7 @@
                 <button @click="resetAll()" style="height: 60px; background: black; color: white; border: none;">RESET ALL</button>
             </div>
 
-            <!-- <div class="logo-container-floating"></div> -->
-            <!-- v-if="page == 'setup'" -->
-            <div id="setup" class="top-content"
-                v-if="page == 'setup' && !top_minimized" >
+            <div id="setup" class="top-content" v-if="page == 'setup' && !top_minimized" >
 
                 <div id="setup-form">
                     <div class="logo-container">
@@ -101,6 +94,7 @@
             </div>
 
             <div id="raffle-time" class="top-content" v-if="page == 'raffle' && !top_minimized">
+                
                 <div id="rollers">
 
                     <div class="logo-container">
