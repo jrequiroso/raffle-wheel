@@ -210,6 +210,21 @@ button {
     overflow: hidden;
     width: 100%;
 }
+.prize-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.prize-name {
+    font-weight: bold;
+}
+
+.prize-sponsor {
+    font-size: 21px;
+}
 
 .roller .rolling {
     position: absolute;
