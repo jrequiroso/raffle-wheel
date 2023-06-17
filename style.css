@@ -70,7 +70,7 @@ button {
 }
 
 .bottom-half {
-    /* height: calc(100vh - 450px); */
+    height: 100vh;
     overflow-y: auto; 
     position: relative;
     border-top: 20px solid #fdbd00;
