@@ -220,6 +220,8 @@ button {
 
 .prize-name {
     font-weight: bold;
+    font-size: 20px;
+    text-align: center;
 }
 
 .prize-sponsor {
@@ -359,11 +361,6 @@ button {
 
     .roller-controls {
         padding-left: unset;
-    }
-
-    .prize-name {
-        font-size: 20px;
-        text-align: center;
     }
 
     .section-name {
