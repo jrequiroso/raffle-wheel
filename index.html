@@ -177,12 +177,16 @@
                 </div>
             </button>
 
+            <div class="search-container">
+                <input type="text" class="search-input" v-model="search_keyword" placeholder="Search" />
+            </div>
+
             <div class="raffle-information">
                 <div id="name-list" class="lists">
-                    <div class="section-name">Entries ({{ entries.length }})</div>
+                    <div class="section-name">Entries ({{ filteredEntries.length }})</div>
 
                     <div v-if="entries.length > 0">
-                        <div class="entry" v-for="(entry, index) in entries" :key="index">
+                        <div class="entry" v-for="(entry, index) in filteredEntries" :key="index">
                             
                             
                             <button class="button-icon" title="Delete"
@@ -239,9 +243,9 @@
                 </div>
                 
                 <div id="prize-list" class="lists">
-                    <div class="section-name">Prizes ({{ prizes.length }})</div>
+                    <div class="section-name">Prizes ({{ filteredPrizes.length }})</div>
                     <div>
-                        <div class="prize" v-for="(prize, index) in prizes" :key="index">
+                        <div class="prize" v-for="(prize, index) in filteredPrizes" :key="index">
                             
                             <button class="button-icon" title="Delete"
                                 v-if="page == 'setup' && !is_editing_prize && winners.length == 0"
@@ -319,9 +323,9 @@
         
                 <div id="winners-list" class="lists"
                     :class="{ hidden: winners.length == 0}">
-                    <div class="section-name">Winners</div>
+                    <div class="section-name">Winners ({{ filteredWinners.length }})</div>
                     <ul>
-                        <li class="winner" v-for="(winner, index) in winners" :key="index">
+                        <li class="winner" v-for="(winner, index) in filteredWinners" :key="index">
                             <span style="font-weight: 600;">{{ winner.person }}</span> wins a <span style="font-weight: 600;">{{ winner.prize.name }}</span> from {{ winner.prize.sponsor }}
                         </li>
                     </ul>

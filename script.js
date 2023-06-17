@@ -82,6 +82,39 @@ createApp({
                 (this.selected_person != null) &&
                 (this.entries.length > 0) &&
                 (this.prizes.length > 0)
+        },
+
+        filteredEntries() {
+            if (this.search_keyword.trim() == '') {
+                return this.entries;
+            }
+            
+            return this.entries.filter(entry => {
+                return entry.toLowerCase().includes(this.search_keyword.toLowerCase());
+            });
+        },
+
+        filteredPrizes() {
+            if (this.search_keyword.trim() == '') {
+                return this.prizes;
+            }
+
+            return this.prizes.filter(prize => {
+                return prize.name.toLowerCase().includes(this.search_keyword.toLowerCase()) ||
+                    prize.sponsor.toLowerCase().includes(this.search_keyword.toLowerCase());
+            });
+        },
+
+        filteredWinners() {
+            if (this.search_keyword.trim() == '') {
+                return this.winners;
+            }
+
+            return this.winners.filter(winner => {
+                return winner.person.toLowerCase().includes(this.search_keyword.toLowerCase()) ||
+                    winner.prize.name.toLowerCase().includes(this.search_keyword.toLowerCase()) ||
+                    winner.prize.sponsor.toLowerCase().includes(this.search_keyword.toLowerCase());
+            });
         }
     },
 
