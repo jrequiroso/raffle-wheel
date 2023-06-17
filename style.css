@@ -78,10 +78,14 @@ button {
 
 .search-container {
     padding: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: center;
 }
 
 .search-input {
-    width: 100%;
+    width: 50%;
     height: 40px;
     border: none;
     border-bottom: 1px solid black;

@@ -179,6 +179,7 @@
 
             <div class="search-container">
                 <input type="text" class="search-input" v-model="search_keyword" placeholder="Search" />
+                <button class="button primary" v-if="search_keyword !=''" @click="search_keyword = ''">Reset</button>
             </div>
 
             <div class="raffle-information">
@@ -255,7 +256,8 @@
                                 </svg>
                             </button>
 
-                            <div class="item-text" v-if="!is_editing_prize|| index != edit_prize_index">{{ prize.name }} from {{ prize.sponsor }}</div>
+                            <div v-if="!is_editing_prize|| index != edit_prize_index" class="item-text">{{ prize.name }} from {{ prize.sponsor }}</div>
+                            
                             <div v-else-if="index == edit_prize_index" class="edit-container">
                                 <input class="item-text-edit" type="text" v-model="prizes[index].name" placeholder="Prize Name" />
                                 <span> from </span>
